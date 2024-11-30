@@ -1,29 +1,14 @@
-print("increasing triangle")
-for i in range(6):
-    for j in range(i,i+1):
-        print(j*'*')
+def check_right_triangle(sides):
+    sides.sort()
+    if sides[2]**2==sides[0]**2+sides[1]**2:
+        return True
+    return False
+sides=[]
+sides.append(int(input("enter side one")))
+sides.append(int(input("enter side two")))
+sides.append(int(input("enter side three")))
+if check_right_triangle(sides):
+    print("the given sides are part of right triangle")
+else:
+    print("the given sides are not the part of right triangle")
 
-
-print("decreasing triangle")
-
-for i in range(5,0,-1):
-    for j in range(i,i+1):
-        print(j*'*')
-
-print("hill pattern")
-for i in range (1,5+1):
-    for j in range(5-i):
-        print(" ",end="")
-
-    for k in range(2*i-1):
-            print('*',end="")
-    print()
-
-print("revers hill pattern")
-for i in range (5,0,-1):
-    for j in range(5-i):
-        print(" ",end="")
-
-    for k in range(2*i-1):
-            print('*',end="")
-    print()
